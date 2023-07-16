@@ -17,8 +17,8 @@ class Retrait
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column]
-    private ?int $code_recu = null;
+    #[ORM\Column(length: 255)]
+    private ?string $code_recu = null;
 
     #[ORM\Column]
     private ?int $montant = null;
@@ -55,12 +55,12 @@ class Retrait
         return $this;
     }
 
-    public function getCodeRecu(): ?int
+    public function getCodeRecu(): ?string
     {
         return $this->code_recu;
     }
 
-    public function setCodeRecu(int $code_recu): static
+    public function setCodeRecu(string $code_recu): static
     {
         $this->code_recu = $code_recu;
 
