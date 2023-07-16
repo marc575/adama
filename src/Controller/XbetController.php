@@ -90,7 +90,7 @@ class XbetController extends AbstractController
             $mailer->send($client_email);
 
             $vendeur_email = (new TemplatedEmail())
-                ->from('hello@example.com')
+                ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande pour une nouvelle recharge 1XBET')
@@ -192,7 +192,7 @@ class XbetController extends AbstractController
             $mailer->send($client_email);
 
             $vendeur_email = (new TemplatedEmail())
-                ->from('hello@example.com')
+                ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande pour un nouveau retrait 1XBET')
