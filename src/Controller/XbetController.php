@@ -78,7 +78,6 @@ class XbetController extends AbstractController
                 ->subject('BS Exchange Services | Bon de commande de votre recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
-                    'date' => new \DateTime('now'),
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'id_transaction' => 'id_transaction',
@@ -95,7 +94,6 @@ class XbetController extends AbstractController
                 ->subject('BS Exchange Services | Bon de commande pour une nouvelle recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
-                    'date' => new \DateTime('now'),
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'id_transaction' => 'id_transaction',
@@ -178,7 +176,6 @@ class XbetController extends AbstractController
                 ->subject('BS Exchange Services | Bon de commande de votre retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
-                    'date' => new \DateTime('now'),
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'code_recu' => 'code_recu',
@@ -195,7 +192,6 @@ class XbetController extends AbstractController
                 ->subject('BS Exchange Services | Bon de commande pour un nouveau retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
-                    'date' => new \DateTime('now'),
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'code_recu' => 'code_recu',
