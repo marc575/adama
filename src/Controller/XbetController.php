@@ -73,7 +73,7 @@ class XbetController extends AbstractController
 
             $client_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
-                ->to('email')
+                ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande de votre recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
@@ -175,7 +175,7 @@ class XbetController extends AbstractController
 
             $client_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
-                ->to('email')
+                ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande de votre retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
