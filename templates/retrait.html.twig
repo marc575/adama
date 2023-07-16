@@ -1,0 +1,91 @@
+{% extends 'index.html.twig' %}
+
+{% block titre %}| Retrait 1XBET  {% endblock %}
+
+
+{% block hero_area %}
+<br><br>
+{% endblock %}
+
+
+{% block features %}
+	<div class="mb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg"></div>
+							{% if msg is not null %}
+							<div class="alert alert-danger">{{ msg }}</div>
+							{% endif %}
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Responsable</span>
+							</p>
+							<h2 class="orange-text">Procédure :</h2>
+							<p>1. Allez à la section <strong>Retirer</strong> <br>
+								2. Choisissez <strong>1XBET ESPECES</strong> <br>
+								3. Ville : <strong>Ouagadougou</strong> <br>
+								4. Rue : <strong>Robert street</strong> <br>
+								5. Validez le retrait par le code envoyé sur votre numéro de téléphone <br>
+								6. Patientez le temps d'approbation et appuyez ensuite sur sur <strong>Obtenir code</strong> et soumettez le code dans le formulaire ci-dessous
+							</p>
+							<h2 class="orange-text">Important :</h2>
+							<p>Veuiller remplir le formulaire et soumettre, puis vous allez <strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong></p>
+							<form class="single-latest-news p-3" method="post" id="retrait" enctype="multipart/form-data">
+        						{% if msg is not null %}
+            						<div class="alert alert-danger">{{ msg }}</div>
+        						{% endif %}
+								<div class="form-row">
+								  <div class="form-group col-md-6">
+									<label for="email"><strong>Email</strong></label>
+									<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+								  </div>
+								  <div class="form-group col-md-3">
+									<label for="code_recu"><strong>Code du reçu 1XBET *</strong></label>
+									<input type="text" class="form-control" id="code_recu" name="code_recu" placeholder="p23a56f89" required>
+								  </div>
+								  <div class="form-group col-md-3">
+									  <label for="montant"><strong>Montant à retirer (XOF) *</strong></label>
+									  <input type="number" class="form-control" id="montant" name="montant" placeholder="Min 3000 FCFA" required>
+								  </div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-9">
+										<label for="pays"><strong>Pays *</strong></label>
+										<select id="pays" name="pays"  class="form-control" required>
+										  <option value="MOOV CI">MOOV CI</option>
+										  <option value="MTN CI">MTN CI</option>
+										  <option value="ORANGE CI">ORANGE CI</option>
+										</select>
+									</div>
+									<div class="form-group col-md-3">
+									  <label for="id_compte"><strong>ID compte 1XBET *</strong></label>
+									  <input type="number" class="form-control" id="id_compte" name="id_compte" placeholder="0123456789" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+									<label for="numero_recu"><strong>Numéro de réception *</strong></label>
+									<input type="number" class="form-control" id="numero_recu" name="numero_recu" placeholder="2250123456789" required>
+								  </div>
+								  <div class="form-group col-md-6">
+									<label for="cnumero_recu"><strong>Confirmer le numéro de réception *</strong></label>
+									<input type="number" class="form-control" id="cnumero_recu" name="cnumero_recu" placeholder="2250123456789" required>
+								  </div>
+								</div>
+
+        						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								<button type="submit" class="btn btn-success">Envoyer</button>
+							</form>
+							<div class="hero-btns">
+								<a href="https://wa.me/2250708618478" class="boxed-btn">Besoin d'aide ?</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

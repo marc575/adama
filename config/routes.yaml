@@ -3,3 +3,43 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+index:
+    path: /
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\HomeController::index
+
+    # if the action is implemented as the __invoke() method of the
+    # controller class, you can skip the '::method_name' part:
+    # controller: App\Controller\BlogController
+
+about:
+    path: /about
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\HomeController::about
+
+vente:
+    path: /cryptomonnaie/vente
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\CryptoController::vente
+
+achat:
+    path: /cryptomonnaie/achat
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\CryptoController::achat
+
+echange:
+    path: /cryptomonnaie/echange
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\CryptoController::echange
+
+depot:
+    path: /xbet/depot
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\XbetController::depot
+
+retrait:
+    path: /xbet/retrait
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\XbetController::retrait

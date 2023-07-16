@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BS Exchange Services {% block titre %}  {% endblock %}</title>
+
+    <meta name="author" content="Marc Tatchou">
+    <meta name="description" content="Ventes, achats et échanges de cryptomonnaies (USDT, PM, BUSD, BNB). Dépot et retrait 1xbet.">
+    <meta property="og:site_name" content="BS Exchange Services">
+    <meta name="twitter:title" property="og:title" itemprop="name" content="Ventes, achats et échanges de cryptomonnaies (USDT, PM, BUSD, BNB). Dépot et retrait 1xbet.">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Bitcoin, Perfect Money, Ethereum, Binance">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link href="{{ asset("assets/img/favicon.png") }}" rel="icon">
+    <link href="{{ asset("assets/img/favicon.png") }}" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{{ asset("assets/css/all.min.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/owl.carousel.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/magnific-popup.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/animate.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/meanmenu.min.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/main.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/responsive.css") }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="#">
+								<img src="{{ asset("assets/img/logo.png") }}" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="{{ path("index") }}">Accueil</a></li>
+								<li class="current-list-item"><a href="{{ path('index') }}#about">A Propos</a></li>
+								<li class="current-list-item"><a href="{{ path('index') }}#crypto">Cryptomonnaies</a>
+									<ul class="sub-menu">
+										<li><a href="{{ path('vente') }}">Vendre</a></li>
+										<li><a href="{{ path('achat') }}">Acheter</a></li>
+										<li><a href="{{ path('echange') }}">Echanger</a></li>
+									</ul>
+								</li>
+								<li class="current-list-item"><a href="{{ path("index") }}#1xbet">1xbet</a>
+									<ul class="sub-menu">
+										<li><a href="{{ path('depot') }}">Depot</a></li>
+										<li><a href="{{ path('retrait') }}">Retrait</a></li>
+									</ul>
+								</li>
+								<li class="current-list-item"><a href="{{ path('index') }}#contacts">Contacts</a></li>
+								<li class="current-list-item"><a href="{{ path('about') }}">Besoin d'aide ?</a></li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+    {% block hero_area %}
+	<!-- hero area -->
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle">BS Exchange Services</p>
+							<h1>De quel service avez vous besoin ?</h1>
+							<div class="hero-btns">
+								<a href="{{ path('index') }}#crypto" class="boxed-btn">Cryptomonnaie</a>
+								<a href="{{ path('index') }}#1xbet" class="bordered-btn">1XBET</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end hero area -->
+	{% endblock %}
+
+    {% block features %}
+	<!-- features list section -->
+	<div class="list-section pt-80 pb-80">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shipping-fast"></i>
+						</div>
+						<div class="content">
+							<h3>Service rapide</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>Disponible 7j/7 24h/24</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-sync"></i>
+						</div>
+						<div class="content">
+							<h3>Assitance Disponible</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- end features list section -->	
+
+	<!-- latest news -->
+	<div class="latest-news pt-100 pb-100">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Nos</span> Services</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6 col-md-6" id="crypto">
+					<div class="single-latest-news">
+						<a href="#"><div class="latest-news-bg news-bg-1"></div></a>
+						<div class="news-text-box">
+							<h3><a href="#">Vendre, acheter et échanger vos cryptomonnaies au meilleur tarif (USDT, PM, BUSD, BNB)</a></h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Responsable</span>
+							</p>
+							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Cliquez sur votre besoin ci-dessous !</p>
+							<a href="{{ path('vente') }}" class="read-more-btn">VENDRE |</a>
+							<a href="{{ path('achat') }}" class="read-more-btn">ACHETER |</a>
+							<a href="{{ path('echange') }}" class="read-more-btn">ECHANGER</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6" id="1xbet">
+					<div class="single-latest-news">
+						<a href="#"><div class="latest-news-bg news-bg-2"></div></a>
+						<div class="news-text-box">
+							<h3><a href="#">Faites vos dépots et retrait 1xbet au meilleur tarif. CODE PROMO 5511</a></h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Responsable</span>
+							</p>
+							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Cliquez sur votre besoin ci-dessous !</p>
+							<a href="{{ path('depot') }}" class="read-more-btn">DEPOT |</a>
+							<a href="{{ path('retrait') }}" class="read-more-btn">RETRAIT</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end latest news -->
+    {% endblock features %}
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6" id="about">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">BS Exchange Services</h2>
+						<p>Services d'achat, de vente et d'échange de cryptomonnaies |
+							Services de dépôt et retrait 1xbet</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6" id="contacts">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Contacts</h2>
+						<ul>
+							<li>Abidjan, Cote d'ivoire</li>
+							<li>Barryadamagd@gmail.com</li>
+							<li>(+225) 0708618478</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Accès rapide</h2>
+						<ul>
+							<li><a href="https://wa.me/2250708618478">Service client</a></li>
+							<li><a href="{{ path('index') }}">Accueil</a></li>
+							<li><a href="{{ path('achat') }}">Achat de cryptomonnaie</a></li>
+							<li><a href="{{ path('vente') }}">Vente de cryptomonnaie</a></li>
+							<li><a href="{{ path('echange') }}">Echange de cryptomonnaie</a></li>
+							<li><a href="{{ path('depot') }}">Dépot 1xbet</a></li>
+							<li><a href="{{ path('retrait') }}">Retrait 1xbet</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>&copy; Copyright - Réalisé par <a href="https://www.marco-5.1-xb-et.com/">Digital Lab's</a>,  Tous droits reservés.<br>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="https://www.facebook.com/profile.php?id=100092585719468" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/BarryAd33179246?t=GtZJuKXuInlQUh-5eh1VWg&s=09" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://t.me/TZZEdxbetonebetforrone" target="_blank"><i class="fab fa-telegram"></i></a></li>
+							<li><a href="https://wa.me/2250708618478" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+	<!-- jquery -->
+	<script src="{{ asset("assets/js/jquery-1.11.3.min.js") }}"></script>
+	<!-- bootstrap -->
+	<script src="{{ asset("assets/bootstrap/js/bootstrap.min.js") }}"></script>
+	<!-- count down -->
+	<script src="{{ asset("assets/js/jquery.countdown.js") }}"></script>
+	<!-- isotope -->
+	<script src="{{ asset("assets/js/jquery.isotope-3.0.6.min.js") }}"></script>
+	<!-- waypoints -->
+	<script src="{{ asset("assets/js/waypoints.js") }}"></script>
+	<!-- owl carousel -->
+	<script src="{{ asset("assets/js/owl.carousel.min.js") }}"></script>
+	<!-- magnific popup -->
+	<script src="{{ asset("assets/js/jquery.magnific-popup.min.js") }}"></script>
+	<!-- mean menu -->
+	<script src="{{ asset("assets/js/jquery.meanmenu.min.js") }}"></script>
+	<!-- sticker js -->
+	<script src="{{ asset("assets/js/sticker.js") }}"></script>
+	<!-- main js -->
+	<script src="{{ asset("assets/js/main.js") }}"></script>
+
+</body>
+</html>

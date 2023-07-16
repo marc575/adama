@@ -1,0 +1,94 @@
+{% extends 'index.html.twig' %}
+
+{% block titre %}| Depot 1XBET  {% endblock %}
+
+{% block hero_area %}
+<br><br>
+{% endblock %}
+
+
+{% block features %}
+	<div class="mb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg"></div>
+							{% if msg is not null %}
+							<div class="alert alert-danger">{{ msg }}</div>
+							{% endif %}
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Responsable</span>
+							</p>
+							<h2 class="orange-text">Procédure :</h2>
+							<p>1. Remplissez le formulaire jusqu'au moment <br>
+								2. Effectuez la transaction avec le code qui apparaitra après la saisie du montant <br>
+								3. Récuperez l'ID de la transaction et entrez-le dans la dernière case <br>
+								4. Soumettez le formulaire</p>
+							<h2 class="orange-text">Important :</h2>
+							<p>Veuiller remplir le formulaire et soumettre, puis vous allez <strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong></p>
+							<p>Si vous choisissez MTN CI suivez les étapes suivant : <br>
+								1. Tapez *133# en suite choisissez option 3 et 1 pour les transferts internationaux <br>
+								2. Pour les transferts internationaux, tapez le code selon votre pays et le réseau dont vous utilisez puis choisissez l'un des numéros pour le transfert <br>
+								3. Enfin saisissez les numéros suivants selon votre réseau mobile <br>
+									<strong class="orange-text"># MOOV : +2250152468381 <br>
+											# MTN : +2250564495613 <br>
+											# ORANGE : +2250708618478
+									</strong> 
+							</p>
+							<form class="single-latest-news p-3" method="post" id="depot" enctype="multipart/form-data">
+        						{% if msg is not null %}
+            						<div class="alert alert-danger">{{ msg }}</div>
+        						{% endif %}
+								<div class="form-row">
+								  <div class="form-group col-md-6">
+									<label for="email"><strong>Email</strong></label>
+									<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+								  </div>
+								  <div class="form-group col-md-6">
+									<label for="id_compte"><strong>ID compte 1XBET (XOF) *</strong></label>
+									<input type="number" class="form-control" id="id_compte" name="id_compte" placeholder="0123456789" required>
+								  </div>
+								</div>
+								<p><strong class="orange-text"># Effectuer votre transaction avec une SIM personnelle</strong></p>
+								<p><strong class="orange-text"># Envoyer exactement le montant saisi sur le formulaire</strong></p>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="pays"><strong>Pays *</strong></label>
+										<select id="pays" name="pays" class="form-control" required>
+										  <option value="MOOV CI">MOOV CI</option>
+										  <option value="MTN CI">MTN CI</option>
+										  <option value="ORANGE CI">ORANGE CI</option>
+										</select>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="montant"><strong>Montant (FCFA) *</strong></label>
+										<input type="number" class="form-control" id="montant" name="montant" placeholder="Min 500 FCFA" required>
+									</div>
+								</div>
+								<p><strong class="orange-text"># Après le paiement, entrez l'ID de transaction dans la case ci-dessous</strong></p>    
+								<div class="form-row">
+									<div class="form-group col-md-6">
+									<label for="id_transaction"><strong>ID de transaction *</strong></label>
+									<input type="number" class="form-control" id="id_transaction" name="id_transaction" placeholder="0123456789" required>
+								  </div>
+								  <div class="form-group col-md-6">
+									<label for="numero_paiement"><strong>Numéro de paiement *</strong></label>
+									<input type="number" class="form-control" id="numero_paiement" name="numero_paiement" placeholder="2250123456789" required>
+								  </div>
+								</div>
+        						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								<button type="submit" class="btn btn-success">Envoyer</button>
+							</form>
+							<div class="hero-btns">
+								<a href="#" class="boxed-btn">Besoin d'aide ?</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
