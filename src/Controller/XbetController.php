@@ -74,7 +74,6 @@ class XbetController extends AbstractController
             $c_email = (new TemplatedEmail())
                 ->from('infos@bses.1-xb-et.com')
                 ->to($email)
-                ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande de votre recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
@@ -90,7 +89,6 @@ class XbetController extends AbstractController
             $v_email = (new TemplatedEmail())
                 ->from('infos@bses.1-xb-et.com')
                 ->to('Barryadamagd@gmail.com')
-                ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande pour une nouvelle recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
@@ -172,7 +170,6 @@ class XbetController extends AbstractController
             $c_email = (new TemplatedEmail())
                 ->from('infos@bses.1-xb-et.com')
                 ->to($email)
-                ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande de votre retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
@@ -188,7 +185,6 @@ class XbetController extends AbstractController
             $v_email = (new TemplatedEmail())
                 ->from('infos@bses.1-xb-et.com')
                 ->to('Barryadamagd@gmail.com')
-                ->priority(TemplatedEmail::PRIORITY_HIGH)
                 ->subject('BS Exchange Services | Bon de commande pour un nouveau retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
