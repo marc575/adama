@@ -132,31 +132,31 @@ class XbetController extends AbstractController
             {
                 $msg = "Ajoutez une adresse mail valide";
 
-                return $this->render('depot.html.twig', compact('msg'));
+                return $this->render('retrait.html.twig', compact('msg'));
             }
             if(!$id_compte || strlen($id_compte) < 6)
             {
                 $msg = "Precisez l'identifiant exacte de votre compte 1xbet";
 
-                return $this->render('depot.html.twig', compact('msg'));
+                return $this->render('retrait.html.twig', compact('msg'));
             }
             if(!$numero_recu || strlen($numero_recu) < 6)
             {
                 $msg = "Renseignez le numéro de reçu exacte";
 
-                return $this->render('depot.html.twig', compact('msg'));
+                return $this->render('retrait.html.twig', compact('msg'));
             }
-            if($montant < 500 || strlen($montant) < 3)
+            if($montant < 3000 || strlen($montant) < 3)
             {
                 $msg = "Le montant minimal est de 3000 XOF";
 
-                return $this->render('depot.html.twig', compact('msg'));
+                return $this->render('retrait.html.twig', compact('msg'));
             }
             if(!$cnumero_recu || $cnumero_recu != $numero_recu)
             {
                 $msg = "Vérifier bien la confirmation de votre numero de reçu";
 
-                return $this->render('depot.html.twig', compact('msg'));
+                return $this->render('retrait.html.twig', compact('msg'));
             }
 
             $retrait = new Retrait();
