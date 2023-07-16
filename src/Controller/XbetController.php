@@ -71,7 +71,7 @@ class XbetController extends AbstractController
             $em->persist($depot);
             $em->flush();
 
-            $email = (new TemplatedEmail())
+            $c_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -79,7 +79,6 @@ class XbetController extends AbstractController
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
-                    'email' => 'email',
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'id_transaction' => 'id_transaction',
@@ -87,9 +86,9 @@ class XbetController extends AbstractController
                     'pays' => 'pays',          
                 ]);
     
-            $mailer->send($email);
+            $mailer->send($c_email);
 
-            $email = (new TemplatedEmail())
+            $v_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -97,7 +96,6 @@ class XbetController extends AbstractController
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
-                    'email' => 'email',
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'id_transaction' => 'id_transaction',
@@ -105,7 +103,7 @@ class XbetController extends AbstractController
                     'pays' => 'pays',                    
                 ]);
     
-            $mailer->send($email);
+            $mailer->send($v_email);
 
             return $this->redirectToRoute('index');
         }
@@ -173,7 +171,7 @@ class XbetController extends AbstractController
             $em->persist($retrait);
             $em->flush();
 
-            $email = (new TemplatedEmail())
+            $c_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -181,7 +179,6 @@ class XbetController extends AbstractController
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
-                    'email' => 'email',
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'code_recu' => 'code_recu',
@@ -189,9 +186,9 @@ class XbetController extends AbstractController
                     'pays' => 'pays',
                 ]);
     
-            $mailer->send($email);
+            $mailer->send($c_email);
 
-            $email = (new TemplatedEmail())
+            $v_email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -199,7 +196,6 @@ class XbetController extends AbstractController
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
-                    'email' => 'email',
                     'id_compte' => 'id_compte',
                     'montant' => 'montant',
                     'code_recu' => 'code_recu',
@@ -207,7 +203,7 @@ class XbetController extends AbstractController
                     'pays' => 'pays',
                 ]);
     
-            $mailer->send($email);
+            $mailer->send($v_email);
 
             return $this->redirectToRoute('index');
         }
