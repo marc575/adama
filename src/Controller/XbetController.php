@@ -71,7 +71,7 @@ class XbetController extends AbstractController
             $em->persist($depot);
             $em->flush();
 
-            $client_email = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -87,9 +87,9 @@ class XbetController extends AbstractController
                     'pays' => 'pays',          
                 ]);
     
-            $mailer->send($client_email);
+            $mailer->send($email);
 
-            $vendeur_email = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -105,7 +105,7 @@ class XbetController extends AbstractController
                     'pays' => 'pays',                    
                 ]);
     
-            $mailer->send($vendeur_email);
+            $mailer->send($email);
 
             return $this->redirectToRoute('index');
         }
@@ -173,7 +173,7 @@ class XbetController extends AbstractController
             $em->persist($retrait);
             $em->flush();
 
-            $client_email = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -189,9 +189,9 @@ class XbetController extends AbstractController
                     'pays' => 'pays',
                 ]);
     
-            $mailer->send($client_email);
+            $mailer->send($email);
 
-            $vendeur_email = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 ->from('infos@bsexchangeservices.com')
                 ->to('Barryadamagd@gmail.com')
                 ->priority(TemplatedEmail::PRIORITY_HIGH)
@@ -207,7 +207,7 @@ class XbetController extends AbstractController
                     'pays' => 'pays',
                 ]);
     
-            $mailer->send($vendeur_email);
+            $mailer->send($email);
 
             return $this->redirectToRoute('index');
         }
