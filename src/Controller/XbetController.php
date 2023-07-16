@@ -103,7 +103,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirectToRoute('index');
+            // return $this->redirectToRoute('index');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -201,7 +201,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirectToRoute('index');
+            // return $this->redirectToRoute('index');
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
