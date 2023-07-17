@@ -100,10 +100,8 @@ class XbetController extends AbstractController
                 ]);
     
             $mailer->send($v_email);
-            
-            $success = "Cliquez ici pour finaliser votre dépot 1XBET !";
 
-            return $this->redirectToRoute('index', compact('success'));
+            return $this->redirect('https://wa.me/2250708618478');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -199,9 +197,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            $success = "Cliquez ici pour finaliser votre retrait 1XBET !";
-
-            return $this->redirectToRoute('index', compact('success'));
+            return $this->redirect('https://wa.me/2250708618478');
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
