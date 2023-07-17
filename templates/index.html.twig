@@ -94,7 +94,7 @@
 								<a href="{{ path('index') }}#crypto" class="bordered-btn">Cryptomonnaie</a>
 								<a href="{{ path('index') }}#1xbet" class="bordered-btn">1XBET</a>
 							</div> <br>
-							{% if success is not null %}
+							{% if success is defined && success is not null %}
 							<div class="hero-btns">
 								<a href="https://wa.me/2250708618478" class="boxed-btn">{{ success }}</a>
 							</div>
