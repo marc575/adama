@@ -101,7 +101,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://wa.me/2250708618478/?text=id_compte%3D%24id_compte%26montant%3D%24montant%26id_transaction%3D%24id_transaction%26numero_paiement%3D%24numero_paiement%26pays%3D%24pays');
+            return $this->redirect('https://wa.me/2250708618478/?text=id_compte%3D$id_compte&montant%3D$montant&id_transaction%3D$id_transaction&numero_paiement%3D$numero_paiement&pays%3D$pays');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
