@@ -91,9 +91,14 @@
 							<p class="subtitle">BS Exchange Services</p>
 							<h1>De quel service avez vous besoin ?</h1>
 							<div class="hero-btns">
-								<a href="{{ path('index') }}#crypto" class="boxed-btn">Cryptomonnaie</a>
+								<a href="{{ path('index') }}#crypto" class="bordered-btn">Cryptomonnaie</a>
 								<a href="{{ path('index') }}#1xbet" class="bordered-btn">1XBET</a>
+							</div> <br>
+							{% if success is not null %}
+							<div class="hero-btns">
+								<a href="https://wa.me/2250708618478" class="boxed-btn">{{ success }}</a>
 							</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -166,7 +171,7 @@
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Responsable</span>
 							</p>
-							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Cliquez sur votre besoin ci-dessous !</p>
+							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Choisissez votre besoin !</p>
 							<a href="{{ path('vente') }}" class="read-more-btn">VENDRE |</a>
 							<a href="{{ path('achat') }}" class="read-more-btn">ACHETER |</a>
 							<a href="{{ path('echange') }}" class="read-more-btn">ECHANGER</a>
@@ -181,7 +186,7 @@
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Responsable</span>
 							</p>
-							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Cliquez sur votre besoin ci-dessous !</p>
+							<p class="excerpt">Services rapides et disponible 24h/24 7j/7. Choisissez votre besoin !</p>
 							<a href="{{ path('depot') }}" class="read-more-btn">DEPOT |</a>
 							<a href="{{ path('retrait') }}" class="read-more-btn">RETRAIT</a>
 						</div>

@@ -33,25 +33,25 @@ class XbetController extends AbstractController
 
                 return $this->render('depot.html.twig', compact('msg'));
             }
-            if(!$id_compte || strlen($id_compte) < 6)
+            if(!$id_compte || strlen($id_compte) < 8)
             {
                 $msg = "Precisez l'identifiant exacte de votre compte 1xbet";
 
                 return $this->render('depot.html.twig', compact('msg'));
             }
-            if(!$numero_paiement || strlen($numero_paiement) < 6)
+            if(!$numero_paiement || strlen($numero_paiement) < 8)
             {
                 $msg = "Renseignez votre numéro de paiement";
 
                 return $this->render('depot.html.twig', compact('msg'));
             }
-            if($montant < 500 || strlen($montant) < 3)
+            if($montant < 500)
             {
                 $msg = "Le montant minimal est de 500 XOF";
 
                 return $this->render('depot.html.twig', compact('msg'));
             }
-            if(!$id_transaction || strlen($id_transaction) < 6)
+            if(!$id_transaction || strlen($id_transaction) < 8)
             {
                 $msg = "Precisez le numéro de votre ID de transaction";
 
@@ -72,7 +72,7 @@ class XbetController extends AbstractController
             $em->flush();
 
             $c_email = (new TemplatedEmail())
-                ->from('infos@bses.1-xb-et.com')
+                ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->subject('BS Exchange Services | Bon de commande de votre recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
@@ -87,8 +87,8 @@ class XbetController extends AbstractController
             $mailer->send($c_email);
 
             $v_email = (new TemplatedEmail())
-                ->from('infos@bses.1-xb-et.com')
-                ->to('Barryadamagd@gmail.com')
+                ->from('infos@bsexchangeservices.com')
+                ->to('barryadamagd@gmail.com')
                 ->subject('BS Exchange Services | Bon de commande pour une nouvelle recharge 1XBET')
                 ->htmlTemplate('email/depot.html.twig')
                 ->context([
@@ -100,8 +100,10 @@ class XbetController extends AbstractController
                 ]);
     
             $mailer->send($v_email);
+            
+            $success = "Cliquez ici pour finaliser votre dépot 1XBET !";
 
-            // return $this->redirectToRoute('index');
+            return $this->redirectToRoute('index', compact('success'));
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -128,19 +130,19 @@ class XbetController extends AbstractController
 
                 return $this->render('retrait.html.twig', compact('msg'));
             }
-            if(!$id_compte || strlen($id_compte) < 6)
+            if(!$id_compte || strlen($id_compte) < 8)
             {
                 $msg = "Precisez l'identifiant exacte de votre compte 1xbet";
 
                 return $this->render('retrait.html.twig', compact('msg'));
             }
-            if(!$numero_recu || strlen($numero_recu) < 6)
+            if(!$numero_recu || strlen($numero_recu) < 8)
             {
                 $msg = "Renseignez le numéro de reçu exacte";
 
                 return $this->render('retrait.html.twig', compact('msg'));
             }
-            if($montant < 3000 || strlen($montant) < 3)
+            if($montant < 3000)
             {
                 $msg = "Le montant minimal est de 3000 XOF";
 
@@ -168,7 +170,7 @@ class XbetController extends AbstractController
             $em->flush();
 
             $c_email = (new TemplatedEmail())
-                ->from('infos@bses.1-xb-et.com')
+                ->from('infos@bsexchangeservices.com')
                 ->to($email)
                 ->subject('BS Exchange Services | Bon de commande de votre retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
@@ -183,8 +185,8 @@ class XbetController extends AbstractController
             $mailer->send($c_email);
 
             $v_email = (new TemplatedEmail())
-                ->from('infos@bses.1-xb-et.com')
-                ->to('Barryadamagd@gmail.com')
+                ->from('infos@bsexchangeservices.com')
+                ->to('barryadamagd@gmail.com')
                 ->subject('BS Exchange Services | Bon de commande pour un nouveau retrait 1XBET')
                 ->htmlTemplate('email/retrait.html.twig')
                 ->context([
@@ -197,7 +199,9 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            // return $this->redirectToRoute('index');
+            $success = "Cliquez ici pour finaliser votre retrait 1XBET !";
+
+            return $this->redirectToRoute('index', compact('success'));
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
