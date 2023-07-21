@@ -18,7 +18,7 @@ class XbetController extends AbstractController
     public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_POST)) 
+        if($request->isMethod(Request::METHOD_GET)) 
         {
             $email = $request->request->get('email');
             $id_compte = $request->request->get('id_compte');
@@ -99,7 +99,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            //return $this->redirect('https://wa.me/2250708618478');
+            return $this->redirect('https://wa.me/2250708618478');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
