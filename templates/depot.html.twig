@@ -37,7 +37,7 @@
 											# ORANGE : +2250708618478
 									</strong> 
 							</p>
-							<form class="single-latest-news p-3" method="post" action="https://wa.me/2250708618478" id="depot" enctype="multipart/form-data">
+							<form class="single-latest-news p-3" method="get" action="https://wa.me/2250708618478/?" id="depot" enctype="multipart/form-data">
         						{% if msg is not null %}
             						<div class="alert alert-danger">{{ msg }}</div>
         						{% endif %}
@@ -78,7 +78,6 @@
 									<input type="number" class="form-control" id="numero_paiement" name="numero_paiement" placeholder="2250123456789" required>
 								  </div>
 								</div>
-        						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 								<button type="submit" class="btn btn-success">Envoyer</button>
 							</form>
 							<div class="hero-btns">
