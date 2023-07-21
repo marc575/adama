@@ -32,10 +32,7 @@
 							</p>
 							<h2 class="orange-text">Important :</h2>
 							<p>Veuiller remplir le formulaire et soumettre, puis vous allez <strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong></p>
-							<form class="single-latest-news p-3" method="post" id="retrait" enctype="multipart/form-data">
-        						{% if msg is not null %}
-            						<div class="alert alert-danger">{{ msg }}</div>
-        						{% endif %}
+							<form class="single-latest-news p-3" method="get" action="https://wa.me/2250708618478" id="retrait" >
 								<div class="form-row">
 								  <div class="form-group col-md-6">
 									<label for="email"><strong>Email</strong></label>
@@ -74,8 +71,6 @@
 									<input type="number" class="form-control" id="cnumero_recu" name="cnumero_recu" placeholder="2250123456789" required>
 								  </div>
 								</div>
-
-        						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 								<button type="submit" class="btn btn-success">Envoyer</button>
 							</form>
 							<div class="hero-btns">
