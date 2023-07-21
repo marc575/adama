@@ -99,7 +99,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://wa.me/2250708618478?text=');
+            return $this->redirect('https://wa.me/2250708618478?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20une%20recharge%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -193,7 +193,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://wa.me/2250708618478?text=');
+            return $this->redirect('https://wa.me/2250708618478?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
