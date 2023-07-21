@@ -18,7 +18,7 @@ class XbetController extends AbstractController
     public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_GET)) 
+        if($request->isMethod(Request::METHOD_POST)) 
         {
             $email = $request->request->get('email');
             $id_compte = $request->request->get('id_compte');
