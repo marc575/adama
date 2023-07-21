@@ -1,3 +1,7 @@
 framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
+        envelope:
+            sender: 'contact@bsexchangeservices.com'
+        headers:
+            From: 'BS Exchange Services <contact@bsexchangeservices.com>'
