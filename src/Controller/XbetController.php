@@ -194,7 +194,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            //return $this->redirect('https://wa.me/2250708618478/?text=+$id_compte+$montant+$code_recu');
+            return $this->redirectToRoute('https://wa.me/2250708618478/?text=', $request->query->all());
         }
 
         return $this->render('retrait.html.twig', compact('msg'));

@@ -30,7 +30,7 @@
 							<h2 class="orange-text">Important :</h2>
 							<p>Veuiller remplir le formulaire et soumettre, puis vous allez <strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong></p>
 							
-							<form class="single-latest-news p-3" action="{{ path('whatsapp') }}" method="get" id="retrait" enctype="multipart/form-data">
+							<form class="single-latest-news p-3" method="post" id="retrait" enctype="multipart/form-data">
         						{% if msg is not null %}
             						<div class="alert alert-danger">{{ msg }}</div>
         						{% endif %}
