@@ -11,11 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class XbetController extends AbstractController
 {
     #[Route('/xbet/depot', name: 'depot')]
-    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
+    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : RedirectResponse
     {
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
@@ -107,7 +108,7 @@ class XbetController extends AbstractController
     }
 
     #[Route('/xbet/retrait', name: 'retrait')]
-    public function retrait(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
+    public function retrait(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : RedirectResponse
     {
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
@@ -193,7 +194,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://wa.me/2250708618478?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
+            return $this->redirect('https://wa.me/2250708618478/text=+$id_compte+$montant+$code_recu');
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
