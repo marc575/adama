@@ -7,6 +7,7 @@ use App\Entity\Retrait;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -199,4 +200,8 @@ class XbetController extends AbstractController
         return $this->render('retrait.html.twig', compact('msg'));
     }
 
+    public function whatsapp() : RedirectResponse
+    {
+        return $this->redirect('https://wa.me/2250708618478/');
+    }
 }
