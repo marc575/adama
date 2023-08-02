@@ -7,7 +7,6 @@ use App\Entity\Retrait;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -194,15 +193,9 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirectToRoute('whatsapp', $request->query->all());
+            return $this->redirect('https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
-    }
-
-    #[Route('/xbet/envoie', name: 'whatsapp')]
-    public function whatsapp() : RedirectResponse
-    {
-        return $this->redirect('https://wa.me/2250708618478/?text=');
     }
 }
