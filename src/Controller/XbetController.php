@@ -194,7 +194,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirectToRoute('https://wa.me/2250708618478/?text=', $request->query->all());
+            return $this->redirectToRoute('whatsapp', $request->query->all());
         }
 
         return $this->render('retrait.html.twig', compact('msg'));
@@ -203,6 +203,6 @@ class XbetController extends AbstractController
     #[Route('/xbet/envoie', name: 'whatsapp')]
     public function whatsapp() : RedirectResponse
     {
-        return $this->redirect('https://wa.me/2250708618478/');
+        return $this->redirect('https://wa.me/2250708618478/?text=');
     }
 }
