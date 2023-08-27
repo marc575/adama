@@ -99,7 +99,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect(`https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_Compte=$id_compte%0AMontant=$montant%0AId_transaction=$id_transaction%0ANumero_paiement=$numero_paiement%0APays=$pays%0AOPERATION=depot`);
+            return $this->redirect("https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_Compte=$id_compte%0AMontant=$montant%0AId_transaction=$id_transaction%0ANumero_paiement=$numero_paiement%0APays=$pays%0AOPERATION=depot");
         }
 
         return $this->render('depot.html.twig', compact('msg'));
