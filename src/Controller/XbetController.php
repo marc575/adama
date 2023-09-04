@@ -15,13 +15,9 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class XbetController extends AbstractController
 {
-    public function __construct(
-        private HttpClientInterface $client,
-    ) {
-    }
 
     #[Route('/xbet/depot', name: 'depot')]
-    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer)
+    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer, HttpClientInterface $client)
     {
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
@@ -105,7 +101,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            $response = $this->client->request(
+            $response = $client->request(
                 'POST',
                 'https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays',
             );
