@@ -102,13 +102,13 @@ class XbetController extends AbstractController
             $mailer->send($v_email);
 
             $params=array(
-            'token' => '{TOKEN}',
+            'token' => '4nc5m3gvylc526ku',
             'to' => '+2250708618478',
             'body' => 'Bonjour'
             );
             $curl = curl_init();
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://api.ultramsg.com/{62057}/messages/chat",
+                CURLOPT_URL => "https://api.ultramsg.com/instance60257/",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
