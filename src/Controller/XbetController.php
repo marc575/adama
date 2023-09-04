@@ -11,11 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class XbetController extends AbstractController
 {
+    public function __construct(
+        private HttpClientInterface $client,
+    ) {
+    }
+
     #[Route('/xbet/depot', name: 'depot')]
-    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
+    public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer)
     {
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
@@ -99,7 +105,24 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect("https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_Compte=$id_compte%0AMontant=$montant%0AId_transaction=$id_transaction%0ANumero_paiement=$numero_paiement%0APays=$pays%0AOPERATION=depot");
+            $response = $this->client->request(
+                'POST',
+                'https://api.whatsapp.com/send?phone=2250708618478&amp; text=', 
+                [
+                    'headers' => [
+                        'Accept' => 'application/json',
+                    ],
+                    'body' => [
+                        'Id_compte' => $id_compte,
+                        'Montant' => $montant,
+                        'Id_transaction' => $id_transaction,
+                        'Numero_paiement' => $numero_paiement,
+                        'Pays' => $pays,
+                    ],
+                ]
+            );
+
+            return $response;
         }
 
         return $this->render('depot.html.twig', compact('msg'));
