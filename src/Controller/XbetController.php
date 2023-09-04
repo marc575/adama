@@ -101,11 +101,6 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            $response = $client->request(
-                'POST',
-                'https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays',
-            );
-
             return $this->redirect('https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays');
         }
 
