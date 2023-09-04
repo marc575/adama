@@ -101,7 +101,40 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://api.whatsapp.com/send?phone=2250708618478&amp;text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays');
+            $params=array(
+            'token' => '{TOKEN}',
+            'to' => '+2250708618478',
+            'body' => 'Bonjour'
+            );
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => "https://api.ultramsg.com/#62057/messages/chat",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_SSL_VERIFYHOST => 0,
+                CURLOPT_SSL_VERIFYPEER => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => http_build_query($params),
+                CURLOPT_HTTPHEADER => array(
+                    "content-type: application/x-www-form-urlencoded"
+                ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+                echo "cURL Error #:" . $err;
+            } else {
+            echo $response;
+            }
+
+            //return $this->redirect('https://api.whatsapp.com/send?phone=2250708618478&amp;text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
