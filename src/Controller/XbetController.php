@@ -107,19 +107,7 @@ class XbetController extends AbstractController
 
             $response = $this->client->request(
                 'POST',
-                'https://api.whatsapp.com/send?phone=2250708618478&amp; text=', 
-                [
-                    'headers' => [
-                        'Accept' => 'application/json',
-                    ],
-                    'body' => [
-                        'Id_compte' => $id_compte,
-                        'Montant' => $montant,
-                        'Id_transaction' => $id_transaction,
-                        'Numero_paiement' => $numero_paiement,
-                        'Pays' => $pays,
-                    ],
-                ]
+                'https://api.whatsapp.com/send?phone=2250708618478&amp; text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays',
             );
 
             return $response;
