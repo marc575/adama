@@ -101,40 +101,7 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            $params=array(
-            'token' => '4nc5m3gvylc526ku',
-            'to' => '+2250708618478',
-            'body' => 'Bonjour'
-            );
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://api.ultramsg.com/instance60257/messages/chat",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_SSL_VERIFYPEER => 0,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => http_build_query($params),
-                CURLOPT_HTTPHEADER => array(
-                    "content-type: application/x-www-form-urlencoded"
-                ),
-            ));
-
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
-
-            curl_close($curl);
-
-            if ($err) {
-                echo "cURL Error #:" . $err;
-            } else {
-            echo $response;
-            }
-
-            //return $this->redirect('https://api.whatsapp.com/send?phone=2250708618478&amp;text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays');
+            return $this->redirect(`https://api.whatsapp.com/send?phone=2250708618478&amp;text=Id_compte=$id_compte%0Montant=$montant%0Id_transaction=$id_transaction%0Numero_paiement=$numero_paiement%0Pays=$pays`);
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -228,8 +195,10 @@ class XbetController extends AbstractController
     
             $mailer->send($v_email);
 
-            return $this->redirect('https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
-        }
+            return $this->redirect(`https://wa.me/2250708618478/?text=Bonjour%2C%20je%20viens%20de%20faire%20un%20nouveau%20retrait%20%3A%20Id_compte%3D$id_compte%20%3B%20Montant%3D$montant%20%3B%20Code_recu%3D$code_recu%20%3B%20Numero_recu%3D$numero_recu%20%3B%20pays%3D$pays%20.`);
+        }   
+
+        //https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20
 
         return $this->render('retrait.html.twig', compact('msg'));
     }
