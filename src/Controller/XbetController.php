@@ -73,34 +73,6 @@ class XbetController extends AbstractController
             $em->persist($depot);
             $em->flush();
 
-            $c_email = (new TemplatedEmail())
-                ->to($email)
-                ->subject('BS Exchange Services | Bon de commande de votre recharge 1XBET')
-                ->htmlTemplate('email/depot.html.twig')
-                ->context([
-                    'id_compte' => $id_compte,
-                    'montant' => $montant,
-                    'id_transaction' => $id_transaction,
-                    'numero_paiement' => $numero_paiement,
-                    'pays' => $pays,          
-                ]);
-    
-            $mailer->send($c_email);
-
-            $v_email = (new TemplatedEmail())
-                ->to('barryadamagd@gmail.com')
-                ->subject('BS Exchange Services | Bon de commande pour une nouvelle recharge 1XBET')
-                ->htmlTemplate('email/depot.html.twig')
-                ->context([
-                    'id_compte' => $id_compte,
-                    'montant' => $montant,
-                    'id_transaction' => $id_transaction,
-                    'numero_paiement' => $numero_paiement,
-                    'pays' => $pays,                    
-                ]);
-    
-            $mailer->send($v_email);
-
             return $this->redirect('https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20une%20recharge%201XBET%20via%20votre%20site%20bsexchangeservices.com%20');
         }
 
@@ -166,34 +138,6 @@ class XbetController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($retrait);
             $em->flush();
-
-            $c_email = (new TemplatedEmail())
-                ->to($email)
-                ->subject('BS Exchange Services | Bon de commande de votre retrait 1XBET')
-                ->htmlTemplate('email/retrait.html.twig')
-                ->context([
-                    'id_compte' => $id_compte,
-                    'montant' => $montant,
-                    'code_recu' => $code_recu,
-                    'numero_recu' => $numero_recu,
-                    'pays' => $pays,
-                ]);
-    
-            $mailer->send($c_email);
-
-            $v_email = (new TemplatedEmail())
-                ->to('barryadamagd@gmail.com')
-                ->subject('BS Exchange Services | Bon de commande pour un nouveau retrait 1XBET')
-                ->htmlTemplate('email/retrait.html.twig')
-                ->context([
-                    'id_compte' => $id_compte,
-                    'montant' => $montant,
-                    'code_recu' => $code_recu,
-                    'numero_recu' => $numero_recu,
-                    'pays' => $pays,
-                ]);
-    
-            $mailer->send($v_email);
 
             return $this->redirect("https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20");
         }   
