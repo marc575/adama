@@ -51,18 +51,18 @@
 									# ORANGE : +2250708618478
 								</strong>
 							</p>
-							<form class="single-latest-news p-3" method="GET" id="depot" enctype="multipart/form-data" action="https://wa.me/2250708618478?text=">
+							<form class="single-latest-news p-3 rounded border shadow" method="post" id="depot" enctype="multipart/form-data">
 								{% if msg is not null %}
 									<div class="alert alert-danger">{{ msg }}</div>
 								{% endif %}
 								<div class="form-row">
-									<div class="form-group col-md-6">
+									<div class="form-group col-sm-6">
 										<label for="email">
 											<strong>Email</strong>
 										</label>
 										<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
 									</div>
-									<div class="form-group col-md-6">
+									<div class="form-group col-sm-6">
 										<label for="id_compte">
 											<strong>ID compte 1XBET (XOF) *</strong>
 										</label>
@@ -76,7 +76,7 @@
 									<strong class="orange-text"># Envoyer exactement le montant saisi sur le formulaire</strong>
 								</p>
 								<div class="form-row">
-									<div class="form-group col-md-6">
+									<div class="form-group col-sm-6">
 										<label for="pays">
 											<strong>Pays *</strong>
 										</label>
@@ -86,7 +86,7 @@
 											<option value="ORANGE CI">ORANGE CI</option>
 										</select>
 									</div>
-									<div class="form-group col-md-4">
+									<div class="form-group col-sm-6">
 										<label for="montant">
 											<strong>Montant (FCFA) *</strong>
 										</label>
@@ -97,13 +97,13 @@
 									<strong class="orange-text"># Après le paiement, entrez l'ID de transaction dans la case ci-dessous</strong>
 								</p>
 								<div class="form-row">
-									<div class="form-group col-md-6">
+									<div class="form-group col-sm-6">
 										<label for="id_transaction">
 											<strong>ID de transaction *</strong>
 										</label>
 										<input type="number" class="form-control" id="id_transaction" name="id_transaction" placeholder="0123456789" required>
 									</div>
-									<div class="form-group col-md-6">
+									<div class="form-group col-sm-6">
 										<label for="numero_paiement">
 											<strong>Numéro de paiement *</strong>
 										</label>
