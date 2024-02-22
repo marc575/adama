@@ -73,13 +73,13 @@ class XbetController extends AbstractController
             $em->persist($depot);
             $em->flush();
 
-            return $this->redirect(`https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20une%20recharge%201XBET%20via%20votre%20site%20bsexchanges.com%20 
+            return $this->redirect('https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20une%20recharge%201XBET%20via%20votre%20site%20bsexchanges.com%20 
                 id_compte : $id_compte;
                 montant : $montant;
                 id_transaction : $id_transaction;
                 numero_paiement : $numero_paiement;
                 pays : $pays;
-            `);
+            ');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
