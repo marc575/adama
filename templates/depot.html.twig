@@ -1,122 +1,134 @@
 {% extends 'index.html.twig' %}
 
-{% block titre %}| Depot 1XBET
-{% endblock %}
+{% block titre %}| Dépot 1xbet {% endblock %}
 
 {% block hero_area %}
-	<br><br>
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle fw-bold">BS Exchange Services</p>
+							<h1>Dépot 1xBet | Code Promo 5511</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
 
 {% block features %}
 	<div class="mb-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<div class="single-article-section">
-						<div class="single-article-text">
-							<div class="single-artcile-bg"></div>
-							{% if msg is not null %}
-								<div class="alert alert-danger">{{ msg }}</div>
-							{% endif %}
-							<p class="blog-meta">
-								<span class="author">
-									<i class="fas fa-user"></i>
-									Responsable</span>
-							</p>
-							<h2 class="orange-text">Procédure :</h2>
-							<p>1. Remplissez le formulaire jusqu'au montant
-								<br>
-								2. Effectuez la transaction avec le code qui apparaitra après la saisie du montant
-								<br>
-								3. Récuperez l'ID de la transaction et entrez-le dans la dernière case
-								<br>
-								4. Soumettez le formulaire</p>
-							<h2 class="orange-text">Important :</h2>
-							<p>Veuiller remplir le formulaire et soumettre, puis vous allez
-								<strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong>
-							</p>
-							<p>Si vous choisissez MTN CI suivez les étapes suivant :
-								<br>
-								1. Tapez *133# en suite choisissez option 3 et 1 pour les transferts nationaux
-								<br>
-								2. Pour les transferts internationaux, tapez le code selon votre pays et le réseau dont vous utilisez puis choisissez l'un des numéros pour le transfert
-								<br>
-								3. Enfin saisissez les numéros suivants selon votre réseau mobile
-								<br>
-								<strong class="orange-text"># MOOV : +2250152468381
-									<br>
-									# MTN : +2250564495613
-									<br>
-									# ORANGE : +2250708618478
-								</strong>
-							</p>
-							<form class="single-latest-news p-3 rounded border shadow" method="post" id="depot" enctype="multipart/form-data">
-								{% if msg is not null %}
-									<div class="alert alert-danger">{{ msg }}</div>
-								{% endif %}
-								<div class="form-row">
-									<div class="form-group col-sm-6">
-										<label for="email">
-											<strong>Email</strong>
-										</label>
-										<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-									</div>
-									<div class="form-group col-sm-6">
-										<label for="id_compte">
-											<strong>ID compte 1XBET (XOF) *</strong>
-										</label>
-										<input type="number" class="form-control" id="id_compte" name="id_compte" placeholder="0123456789" required>
-									</div>
-								</div>
-								<p>
-									<strong class="orange-text"># Effectuer votre transaction avec une SIM personnelle</strong>
-								</p>
-								<p>
-									<strong class="orange-text"># Envoyer exactement le montant saisi sur le formulaire</strong>
-								</p>
-								<div class="form-row">
-									<div class="form-group col-sm-6">
-										<label for="pays">
-											<strong>Pays *</strong>
-										</label>
-										<select id="pays" name="pays" class="form-control" required>
-											<option value="MOOV CI">MOOV CI</option>
-											<option value="MTN CI">MTN CI</option>
-											<option value="ORANGE CI">ORANGE CI</option>
-										</select>
-									</div>
-									<div class="form-group col-sm-6">
-										<label for="montant">
-											<strong>Montant (FCFA) *</strong>
-										</label>
-										<input type="number" class="form-control" id="montant" name="montant" placeholder="Min 500 FCFA" required>
-									</div>
-								</div>
-								<p>
-									<strong class="orange-text"># Après le paiement, entrez l'ID de transaction dans la case ci-dessous</strong>
-								</p>
-								<div class="form-row">
-									<div class="form-group col-sm-6">
-										<label for="id_transaction">
-											<strong>ID de transaction *</strong>
-										</label>
-										<input type="number" class="form-control" id="id_transaction" name="id_transaction" placeholder="0123456789" required>
-									</div>
-									<div class="form-group col-sm-6">
-										<label for="numero_paiement">
-											<strong>Numéro de paiement *</strong>
-										</label>
-										<input type="number" class="form-control" id="numero_paiement" name="numero_paiement" placeholder="2250123456789" required>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-success w-100">Envoyer</button>
-							</form>
-							<div class="hero-btns">
-								<a href="https://wa.me/2250708618478?text=Bonjour%20Mr%2C%20je%20n%27arrive%20pas%20%C3%A0%20effectuer%20une%20recharge%20sur%20bsexchangeservices.com%20" class="boxed-btn">Besoin d'aide ?</a>
-							</div>
-						</div>
+		<div class="container my-5">
+			<div class="row d-flex py-4 px-2 pe-md-0 align-items-center rounded border shadow">
+				<div class="col-md-6 overflow-hidden">
+					<img class="rounded-3" src="{{ asset("assets/img/4.jpg") }}" alt="echange de crypto" />
+				</div>
+				<div class="col-md-6 px-md-5 pt-3 pt-md-0">
+					<h2 class="display-6 fw-bold lh-1">Procédure pour éffectuer un dépôt 1xbet :</h2>
+					<ul class="lead">
+						<li>Remplissez le formulaire jusqu'au montant</li>
+						<li>Effectuez la transaction avec le code qui apparaitra après la saisie du montant</li>
+						<li>Récuperez l'ID de la transaction et entrez-le dans la dernière case</li>
+						<li>Soumettez le formulaire</li>
+					</ul>
+					<div class="d-grid gap-1 d-md-flex justify-content-md-start mb-4 mb-md-3">
+						<a href="{{ path('depot') }}#depot" type="button" class="btn btn-warning btn-md px-4 fw-bold">Faire votre dépôt</a>
 					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="container d-flex flex-column rounded align-items-center py-5" style="background-image: url({{ asset("assets/img/win.jpg") }}); background-position: center center; height: auto">
+			<p class="lead text-white text-center pb-3">
+				👋 Les paris sportifs n'ont jamais été aussi pratiques et faciles. Il vous suffit de télécharger l'application 1xBet pour être au cœur du grand jeu ! Pour tous les nouveaux joueurs sur l'application mobile : bonus jusqu'à 65 000 FCFA à l'inscription.  Utilisez notre code promotionnel 5511 officiel pour recevoir le bonus dès aujourd'hui. ✊💪
+			</p>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+				<a type="button" href='https://refpa4293501.top/L?tag=d_264333m_1599c_&site=264333&ad=1599' class="btn btn-primary px-3 me-md-2 fw-bold">S'inscrire sur 1xBet avec le code promo 5511</a>
+			</div>
+		</div>
+
+
+		<div class="container my-5">
+			<div class="row d-flex py-5 px-2 pe-md-0 align-items-center rounded-3 border shadow">
+				<div class="col-lg-6 px-lg-5">
+					<h2 class="display-6 fw-bold lh-1">Important !</h2>
+					<p class="lead">Veuiller remplir le formulaire et soumettre, puis vous allez
+						<strong class="orange-text">recevoir un mail de confirmation dans lequel il y aura un lien sur lequel vous devrez cliquer pour finaliser votre commande !</strong>
+					</p>
+
+					<p class="lead fw-bold">
+						Si vous choisissez MTN CI suivez les étapes suivant :
+					</p>
+					<ul class="lead">
+						<li>Tapez *133# en suite choisissez option 3 et 1 pour les transferts nationaux</li>
+						<li>Pour les transferts internationaux, tapez le code selon votre pays et le réseau dont vous utilisez puis choisissez l'un des numéros pour le transfert</li>
+						<li>Enfin saisissez les numéros suivants selon votre réseau mobile</li>
+					</ul>
+
+					<p class="lead fw-bold">
+						Les différents contacts :
+					</p>
+					<ul class="lead">
+						<li>MOOV : +2250152468381</li>
+						<li>MTN : +2250564495613</li>
+						<li>ORANGE : +2250708618478</li>
+					</ul>
+
+					<a href="https://wa.me/2250708618478?text=Bonjour%20Mr,%20je%20n%27arrive%20pas%20%C3%A0%20effectuer%20une%20recharge%20sur%20bsexchangeservices.com%20" type="button" class="btn btn-outline-success rounded-5 btn-md px-4 fw-bold">Besoin d'aide ?</a>
+				</div>
+	
+				<div class="col-lg-6 pt-5 pt-lg-0" id="depot">
+					<form class="p-3 rounded border bg-light" method="post" id="depot" enctype="multipart/form-data">
+						{% if msg is not null %}
+							<div class="alert alert-danger">{{ msg }}</div>
+						{% endif %}
+						<div class="form-group col-12">
+							<label for="email" class="form-label">
+								Email
+							</label>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+						</div>
+						<div class="form-group col-12">
+							<label for="id_compte" class="form-label">
+								ID compte 1XBET (XOF) *
+							</label>
+							<input type="number" class="form-control w-100" id="id_compte" name="id_compte" placeholder="0123456789" required>
+						</div>
+						<div class="form-group col-12">
+							<label for="pays" class="form-label">
+								Pays *
+							</label>
+							<select id="pays" name="pays" class="form-control" required>
+								<option value="MOOV CI">MOOV CI</option>
+								<option value="MTN CI">MTN CI</option>
+								<option value="ORANGE CI">ORANGE CI</option>
+							</select>
+						</div>
+						<div class="form-group col-12">
+							<label for="montant" class="form-label">
+								Montant (FCFA) *
+							</label>
+							<input type="number" class="form-control w-100" id="montant" name="montant" placeholder="Min 500 FCFA" required>
+						</div>
+						<div class="form-group col-12">
+							<label for="id_transaction" class="form-label">
+								ID de transaction *
+							</label>
+							<input type="number" class="form-control w-100" id="id_transaction" name="id_transaction" placeholder="0123456789" required>
+						</div>
+						<div class="form-group col-12">
+							<label for="numero_paiement" class="form-label">
+								Numéro de paiement *
+							</label>
+							<input type="number" class="form-control w-100" id="numero_paiement" name="numero_paiement" placeholder="2250123456789" required>
+						</div>
+						<button type="submit" class="btn btn-warning w-100 fw-bold">Validez</button>
+					</form>
 				</div>
 			</div>
 		</div>
