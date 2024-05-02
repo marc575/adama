@@ -20,13 +20,13 @@ class XbetController extends AbstractController
     public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer, HttpClientInterface $client)
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_POST)) 
+        if($request->isMethod(Request::METHOD_GET)) 
         {
-            $email = $request->request->get('email');
-            $id_compte = $request->request->get('id_compte');
-            $montant = $request->request->get('montant');
-            $id_transaction = $request->request->get('id_transaction');
-            $numero_paiement = $request->request->get('numero_paiement');
+            $email = $request->request->get('Email');
+            $id_compte = $request->request->get('Id_Compte');
+            $montant = $request->request->get('Montant');
+            $id_transaction = $request->request->get('Id_Transaction');
+            $numero_paiement = $request->request->get('Numero_Paiement');
             $pays = $request->request->get('pays');
 
             if(!preg_match("#.{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,5}#", $email))
@@ -73,7 +73,6 @@ class XbetController extends AbstractController
             $em->persist($depot);
             $em->flush();
 
-            return $this->redirect('https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20une%20recharge%201XBET%20via%20votre%20site%20bsexchanges.com%20');
         }
 
         return $this->render('depot.html.twig', compact('msg'));
@@ -84,15 +83,15 @@ class XbetController extends AbstractController
     public function retrait(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_POST)) 
+        if($request->isMethod(Request::METHOD_GET)) 
         {
-            $email = $request->request->get('email');
-            $id_compte = $request->request->get('id_compte');
-            $montant = $request->request->get('montant');
-            $code_recu = $request->request->get('code_recu');
-            $numero_recu = $request->request->get('numero_recu');
-            $cnumero_recu = $request->request->get('cnumero_recu');
-            $pays = $request->request->get('pays');
+            $email = $request->request->get('Email');
+            $id_compte = $request->request->get('Id_Compte');
+            $montant = $request->request->get('Montant');
+            $code_recu = $request->request->get('Code_Recu');
+            $numero_recu = $request->request->get('Numero_Recu');
+            $cnumero_recu = $request->request->get('CNumero_Recu');
+            $pays = $request->request->get('Pays');
 
             if(!preg_match("#.{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,5}#", $email))
             {
@@ -139,10 +138,7 @@ class XbetController extends AbstractController
             $em->persist($retrait);
             $em->flush();
 
-            return $this->redirect("https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchanges.com%20");
         }   
-
-        //https://wa.me/2250708618478/?text=Bonjour%20Mr%2C%20je%20viens%20d%27effectuer%20un%20retrait%201XBET%20via%20votre%20site%20bsexchangeservices.com%20
 
         return $this->render('retrait.html.twig', compact('msg'));
     }
