@@ -75,42 +75,42 @@
 					<a href="https://wa.me/2250708618478?text=Bonjour%20Mr%2C%20je%20n%27arrive%20pas%20%C3%A0%20effectuer%20un%20retrait%20sur%20bsexchangeservices.com%20" type="button" class="btn btn-outline-success rounded-5 btn-md px-4 fw-bold">Besoin d'aide ?</a>
 				</div>
 
-				<div class="col-lg-6 pt-5 pt-lg-0" id="retrait">
-					<form class="p-3 rounded border bg-light" method="post" id="depot" enctype="multipart/form-data">
+				<div class="col-lg-6 pt-5 pt-lg-0">
+					<form class="p-3 rounded border bg-light" method="GET" action="https://wa.me/2250708618478?text=" id="retrait" >
 						{% if msg is not null %}
 							<div class="alert alert-danger">{{ msg }}</div>
 						{% endif %}
 						<div class="form-group col-12">
-							<label for="email" class="form-label">
+							<label for="Email" class="form-label">
 								Email
 							</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+							<input type="email" class="form-control" id="Email" name="Email" placeholder="Email" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="code_recu" class="form-label">Code du reçu 1xBet *</label>
-							<input type="text" class="form-control w-100" id="code_recu" name="code_recu" placeholder="p23a56f89" required>
+							<label for="Code_Recu" class="form-label">Code du reçu 1xBet *</label>
+							<input type="text" class="form-control w-100" id="Code_Recu" name="Code_Recu" placeholder="p23a56f89" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="pays" class="form-label">
+							<label for="Pays" class="form-label">
 								Pays *
 							</label>
-							<select id="pays" name="pays" class="form-control" required>
+							<select id="Pays" name="Pays" class="form-control" required>
 								<option value="MOOV CI">MOOV CI</option>
 								<option value="MTN CI">MTN CI</option>
 								<option value="ORANGE CI">ORANGE CI</option>
 							</select>
 						</div>
 						<div class="form-group col-12">
-							<label for="montant" class="form-label">Montant à retirer (XOF) *</label>
-							<input type="number" class="form-control w-100" id="montant" name="montant" placeholder="Min 3000 FCFA" required>
+							<label for="Montant" class="form-label">Montant à retirer (XOF) *</label>
+							<input type="number" class="form-control w-100" id="Montant" name="Montant" placeholder="Min 3000 FCFA" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="id_compte" class="form-label">ID compte 1xBet *</label>
-							<input type="number" class="form-control w-100" id="id_compte" name="id_compte" placeholder="0123456789" required>
+							<label for="Id_Compte" class="form-label">ID compte 1xBet *</label>
+							<input type="number" class="form-control w-100" id="Id_Compte" name="Id_Compte" placeholder="0123456789" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="cnumero_recu" class="form-label">Confirmer le numéro de réception *</label>
-							<input type="number" class="form-control w-100" id="cnumero_recu" name="cnumero_recu" placeholder="2250123456789" required>
+							<label for="CNnumero_Recu" class="form-label">Confirmez le numéro de réception *</label>
+							<input type="number" class="form-control w-100" id="CNumero_Recu" name="CNumero_Recu" placeholder="2250123456789" required>
 						</div>
 						<button type="submit" class="btn btn-warning w-100 fw-bold">Validez</button>
 					</form>

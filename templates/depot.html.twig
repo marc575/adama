@@ -82,50 +82,50 @@
 					<a href="https://wa.me/2250708618478?text=Bonjour%20Mr,%20je%20n%27arrive%20pas%20%C3%A0%20effectuer%20une%20recharge%20sur%20bsexchangeservices.com%20" type="button" class="btn btn-outline-success rounded-5 btn-md px-4 fw-bold">Besoin d'aide ?</a>
 				</div>
 	
-				<div class="col-lg-6 pt-5 pt-lg-0" id="depot">
-					<form class="p-3 rounded border bg-light" method="post" id="depot" enctype="multipart/form-data">
+				<div class="col-lg-6 pt-5 pt-lg-0">
+					<form class="p-3 rounded border bg-light" method="GET" action="https://wa.me/2250708618478?text=" id="depot">
 						{% if msg is not null %}
 							<div class="alert alert-danger">{{ msg }}</div>
 						{% endif %}
 						<div class="form-group col-12">
-							<label for="email" class="form-label">
+							<label for="Email" class="form-label">
 								Email
 							</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+							<input type="email" class="form-control" id="Email" name="Email" placeholder="Email" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="id_compte" class="form-label">
+							<label for="Id_Compte" class="form-label">
 								ID compte 1XBET (XOF) *
 							</label>
-							<input type="number" class="form-control w-100" id="id_compte" name="id_compte" placeholder="0123456789" required>
+							<input type="number" class="form-control w-100" id="id_Compte" name="Id_Compte" placeholder="0123456789" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="pays" class="form-label">
+							<label for="Pays" class="form-label">
 								Pays *
 							</label>
-							<select id="pays" name="pays" class="form-control" required>
+							<select id="Pays" name="Pays" class="form-control" required>
 								<option value="MOOV CI">MOOV CI</option>
 								<option value="MTN CI">MTN CI</option>
 								<option value="ORANGE CI">ORANGE CI</option>
 							</select>
 						</div>
 						<div class="form-group col-12">
-							<label for="montant" class="form-label">
+							<label for="Montant" class="form-label">
 								Montant (FCFA) *
 							</label>
-							<input type="number" class="form-control w-100" id="montant" name="montant" placeholder="Min 500 FCFA" required>
+							<input type="number" class="form-control w-100" id="Montant" name="Montant" placeholder="Minimun 500 FCFA" required>
 						</div>
 						<div class="form-group col-12">
 							<label for="id_transaction" class="form-label">
-								ID de transaction *
+								ID de Transaction *
 							</label>
-							<input type="number" class="form-control w-100" id="id_transaction" name="id_transaction" placeholder="0123456789" required>
+							<input type="number" class="form-control w-100" id="Id_Transaction" name="Id_Transaction" placeholder="0123456789" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="numero_paiement" class="form-label">
+							<label for="Numero_Paiement" class="form-label">
 								Numéro de paiement *
 							</label>
-							<input type="number" class="form-control w-100" id="numero_paiement" name="numero_paiement" placeholder="2250123456789" required>
+							<input type="number" class="form-control w-100" id="Numero_Paiement" name="Numero_Paiement" placeholder="2250123456789" required>
 						</div>
 						<button type="submit" class="btn btn-warning w-100 fw-bold">Validez</button>
 					</form>
