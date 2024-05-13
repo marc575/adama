@@ -83,7 +83,7 @@
 				</div>
 	
 				<div class="col-lg-6 pt-5 pt-lg-0">
-					<form class="p-3 rounded border bg-light" method="GET" action="https://api.whatsapp.com/send/?phone=2250708618478&text=" id="depot">
+					<form class="p-3 rounded border bg-light" method="POST" id="depot">
 						{% if msg is not null %}
 							<div class="alert alert-danger">{{ msg }}</div>
 						{% endif %}
@@ -97,7 +97,7 @@
 							<label for="Id_Compte" class="form-label">
 								ID compte 1XBET (XOF) *
 							</label>
-							<input type="number" class="form-control w-100" id="id_Compte" name="Id_Compte" placeholder="0123456789" required>
+							<input type="number" class="form-control w-100" id="Id_Compte" name="Id_Compte" placeholder="0123456789" required>
 						</div>
 						<div class="form-group col-12">
 							<label for="Pays" class="form-label">
@@ -116,7 +116,7 @@
 							<input type="number" class="form-control w-100" id="Montant" name="Montant" placeholder="Minimun 500 FCFA" required>
 						</div>
 						<div class="form-group col-12">
-							<label for="id_transaction" class="form-label">
+							<label for="Id_Transaction" class="form-label">
 								ID de Transaction *
 							</label>
 							<input type="number" class="form-control w-100" id="Id_Transaction" name="Id_Transaction" placeholder="0123456789" required>

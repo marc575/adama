@@ -20,44 +20,38 @@ class XbetController extends AbstractController
     public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer, HttpClientInterface $client)
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_GET)) 
+        if($request->isMethod(Request::METHOD_POST)) 
         {
             $email = $request->request->get('Email');
             $id_compte = $request->request->get('Id_Compte');
             $montant = $request->request->get('Montant');
             $id_transaction = $request->request->get('Id_Transaction');
             $numero_paiement = $request->request->get('Numero_Paiement');
-            $pays = $request->request->get('pays');
+            $pays = $request->request->get('Pays');
 
             if(!preg_match("#.{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,5}#", $email))
             {
                 $msg = "Ajoutez une adresse mail valide";
-
-                return $this->render('depot.html.twig', compact('msg'));
             }
             if(!$id_compte || strlen($id_compte) < 8)
             {
                 $msg = "Precisez l'identifiant exacte de votre compte 1xbet";
 
-                return $this->render('depot.html.twig', compact('msg'));
             }
             if(!$numero_paiement || strlen($numero_paiement) < 8)
             {
                 $msg = "Renseignez votre numéro de paiement";
 
-                return $this->render('depot.html.twig', compact('msg'));
             }
             if($montant < 500)
             {
                 $msg = "Le montant minimal est de 500 XOF";
 
-                return $this->render('depot.html.twig', compact('msg'));
             }
             if(!$id_transaction || strlen($id_transaction) < 8)
             {
                 $msg = "Precisez le numéro de votre ID de transaction";
 
-                return $this->render('depot.html.twig', compact('msg'));
             }
 
             $depot = new Depot();
@@ -72,18 +66,20 @@ class XbetController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($depot);
             $em->flush();
+            
+            $message = "Détails du dépot : Email = " .$email. ", Identifiant du compte = " .$id_compte. ", Pays = " .$pays. ", Montant = " .$montant. ", Identifiant de la transaction = " .$id_transaction. ", Numero de paiement = " .$numero_paiement. ".";
+            $whatsapp = "https://api.whatsapp.com/send/?phone=2250708618478&text=" .$message. "..";
 
+            return $this->redirect($whatsapp);
         }
-
         return $this->render('depot.html.twig', compact('msg'));
-
     }
 
     #[Route('/xbet/retrait', name: 'retrait')]
     public function retrait(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
     {
         $msg = null;
-        if($request->isMethod(Request::METHOD_GET)) 
+        if($request->isMethod(Request::METHOD_POST)) 
         {
             $email = $request->request->get('Email');
             $id_compte = $request->request->get('Id_Compte');
@@ -137,6 +133,11 @@ class XbetController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($retrait);
             $em->flush();
+            
+            $message = "Détails du retrait : Email = " .$email. ", Identifiant du compte = " .$id_compte. ", Pays = " .$pays. ", code du reçu = "  .$code_recu. ", Montant = " .$montant. ", Numéro de reçu = " .$numero_recu. ", Confirmation du numéro de reçu = " .$cnumero_recu. ".";
+            $whatsapp = "https://api.whatsapp.com/send/?phone=2250708618478&text=" .$message. "..";
+
+            return $this->redirect($whatsapp);
 
         }   
 
