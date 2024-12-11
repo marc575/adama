@@ -67,21 +67,21 @@ h6:last-child, .h6:last-child {
 }
 
 h1, .h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 4rem;
 }
 
 @media only screen and (max-width: 767.96px) {
   h1, .h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3.25rem;
   }
 }
 
 @media only screen and (max-width: 575.96px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 2.75rem;
   }
 }
@@ -107,7 +107,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 2.25rem;
 }
@@ -120,20 +120,20 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.75rem;
 }
 
 @media only screen and (max-width: 575.96px) {
   h4, .h4 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.5rem;
   }
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem;
 }
@@ -145,7 +145,7 @@ h6, .h6 {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 0.1px;

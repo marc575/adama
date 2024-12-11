@@ -12,13 +12,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use App\Service\CoinGeckoService;
 
 class XbetController extends AbstractController
 {
+    private $coinGeckoService;
+
+    public function __construct(CoinGeckoService $coinGeckoService)
+    {
+        $this->coinGeckoService = $coinGeckoService;
+    }
 
     #[Route('/xbet/depot', name: 'depot')]
     public function depot(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer, HttpClientInterface $client)
     {
+        
+        $trending = $this->coinGeckoService->getTrendingCoins();
+        $prices = $this->coinGeckoService->getRealTimePrices(['bitcoin', 'ethereum', 'tether']);
+        $history = $this->coinGeckoService->getMarketHistory('bitcoin');
+
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
         {
@@ -72,12 +84,22 @@ class XbetController extends AbstractController
 
             return $this->redirect($whatsapp);
         }
-        return $this->render('depot.html.twig', compact('msg'));
+        return $this->render('depot.html.twig', [
+            'msg'  => $msg,
+            'trending' => $trending,
+            'prices' => $prices,
+            'history' => $history,
+        ]);
     }
 
     #[Route('/xbet/retrait', name: 'retrait')]
     public function retrait(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer) : Response
     {
+        
+        $trending = $this->coinGeckoService->getTrendingCoins();
+        $prices = $this->coinGeckoService->getRealTimePrices(['bitcoin', 'ethereum', 'tether']);
+        $history = $this->coinGeckoService->getMarketHistory('bitcoin');
+        
         $msg = null;
         if($request->isMethod(Request::METHOD_POST)) 
         {
@@ -141,6 +163,11 @@ class XbetController extends AbstractController
 
         }   
 
-        return $this->render('retrait.html.twig', compact('msg'));
+        return $this->render('retrait.html.twig', [
+            'msg'  => $msg,
+            'trending' => $trending,
+            'prices' => $prices,
+            'history' => $history,
+        ]);
     }
 }
