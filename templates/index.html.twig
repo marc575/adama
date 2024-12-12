@@ -112,7 +112,7 @@
 	{% endblock %}
 
 	<!-- Market Trends Section with Graph -->
-    <div class="container my-5" data-aos="fade-up">
+    <div class="container my-5">
         <h2 class="mb-4 text-center fw-bold">Tendances du Marché (Valeurs)</h2>
         {% if trending.coins is not empty %}
         <canvas id="marketTrendsChart"></canvas>
@@ -143,7 +143,7 @@
 	<!-- About end -->
     
     <!-- Market Trends Section -->
-    <div class="container my-3" data-aos="fade-up">
+    <div class="container my-3">
 	{% if trending is not empty %}
 		<div class="swiper-trends">
 			<div class="swiper-wrapper">
@@ -259,7 +259,7 @@
     {% endblock features %}
 
 	<!-- Price History Section -->
-    <div class="container my-5" data-aos="fade-up">
+    <div class="container my-5">
         <h2 class="mb-4 text-center fw-bold">Historique des Prix du Bitcoin</h2>
         {% if trending.coins is not empty %}
         <canvas id="priceHistoryChart"></canvas>
@@ -399,11 +399,8 @@
 	
 	<!-- Bootstrap JS, AOS & Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        AOS.init();
-
 		// Chart.js for Market Trends
         const marketTrendsCtx = document.getElementById('marketTrendsChart').getContext('2d');
 		const labelsTrend = [];
@@ -469,7 +466,6 @@
     const swiper = new Swiper('.swiper-trends', {
         slidesPerView: 1, // Nombre de cartes visibles
         spaceBetween: 15, // Espace entre les cartes
-		loop: true, // Boucle infinie
 		autoplay: {
 			delay: 500, // Autoplay avec un délai de 2,5 secondes
 			disableOnInteraction: false, // Ne pas désactiver l'autoplay lors de l'interaction
