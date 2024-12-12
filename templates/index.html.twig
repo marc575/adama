@@ -114,7 +114,11 @@
 	<!-- Market Trends Section with Graph -->
     <div class="container my-5" data-aos="fade-up">
         <h2 class="mb-4 text-center fw-bold">Tendances du Marché (Valeurs)</h2>
+        {% if trending.coins is not empty %}
         <canvas id="marketTrendsChart"></canvas>
+    {% else %}
+        <p class="text-center text-danger">pas disponibles pour le moment.</p>
+    {% endif %}
     </div>
 
     {% block features %}
@@ -140,6 +144,7 @@
     
     <!-- Market Trends Section -->
     <div class="container my-3" data-aos="fade-up">
+	{% if trending is not empty %}
 		<div class="swiper-trends">
 			<div class="swiper-wrapper">
 				{% for coin in trending.coins %}
@@ -157,6 +162,7 @@
 				{% endfor %}
 			</div>
 		</div>
+	{% endif %}
     </div>
 
 	<!-- latest news -->
@@ -255,7 +261,11 @@
 	<!-- Price History Section -->
     <div class="container my-5" data-aos="fade-up">
         <h2 class="mb-4 text-center fw-bold">Historique des Prix du Bitcoin</h2>
+        {% if trending.coins is not empty %}
         <canvas id="priceHistoryChart"></canvas>
+    {% else %}
+        <p class="text-center text-danger">pas disponibles pour le moment.</p>
+    {% endif %}
     </div>
 
 	<!-- features list section -->
@@ -409,8 +419,8 @@
                 datasets: [{
                     label: 'Classement du Marché (Prix)',
                     data: dataTrend,
-                    backgroundColor: 'rgba(255, 215, 0, 0.6)',
-                    borderColor: 'rgba(255, 215, 0, 0.4)',
+                    backgroundColor: 'rgba(255, 215, 0, 0.5)',
+                    borderColor: 'rgba(255, 215, 0, 0)',
                     borderWidth: 1
                 }]
             },
@@ -442,8 +452,8 @@
                 datasets: [{
                     label: 'Prix (USD)',
                     data: dataHistory,
-                    backgroundColor: 'rgba(255, 215, 0, 0.6)',
-                    borderColor: 'rgba(255, 215, 0, 0.4)',
+                    backgroundColor: 'rgba(255, 215, 0, 0.5)',
+                    borderColor: 'rgba(255, 215, 0, 0)',
                     borderWidth: 1,
                 }]
             },
