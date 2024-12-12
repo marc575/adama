@@ -143,13 +143,13 @@
 	<!-- About end -->
     
     <!-- Market Trends Section -->
-    <div class="container my-3">
+    <div class="container overflow-hidden my-3">
 	{% if trending is not empty %}
 		<div class="swiper-trends">
 			<div class="swiper-wrapper">
 				{% for coin in trending.coins %}
 					<div class="swiper-slide">
-						<div class="card crypto-card rounded-5 shadow">
+						<div class="card rounded">
 							<div class="card-body">
 								<p class="card-title fw-bold text-warning">{{ coin.item.name }}</p>
 								<p class="card-text">
@@ -466,6 +466,9 @@
     const swiper = new Swiper('.swiper-trends', {
         slidesPerView: 1, // Nombre de cartes visibles
         spaceBetween: 15, // Espace entre les cartes
+      	centeredSlides: true,
+      	mousewheel: true,
+		loop: true,
 		autoplay: {
 			delay: 500, // Autoplay avec un délai de 2,5 secondes
 			disableOnInteraction: false, // Ne pas désactiver l'autoplay lors de l'interaction
